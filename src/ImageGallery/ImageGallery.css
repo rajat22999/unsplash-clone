@@ -1,0 +1,28 @@
+section {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .img-row{
+    margin: 10px;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  @media (max-width:575px){
+    section{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .img-row{
+        margin: 0px;
+      }
+  }
