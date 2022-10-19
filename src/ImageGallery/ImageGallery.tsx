@@ -14,35 +14,39 @@ const ImageGallery: React.FC = () => {
   }, []);
 
   return (
-    <section>
-      <div className="img-row">
-        {data.slice(0, 10)?.map((item: any, index: any) => {
-          return (
-            <Fragment key={index}>
-              <img src={item?.urls?.small} alt="" />
-            </Fragment>
-          );
-        })}
-      </div>
-      <div className="img-row">
-        {data.slice(10, 20)?.map((item: any, index: any) => {
-          return (
-            <Fragment key={index}>
-              <img src={item?.urls?.small} alt="" />
-            </Fragment>
-          );
-        })}
-      </div>
-      <div className="img-row">
-        {data.slice(20, 30)?.map((item: any, index: any) => {
-          return (
-            <Fragment key={index}>
-              <img src={item?.urls?.small} alt="" />
-            </Fragment>
-          );
-        })}
-      </div>
-    </section>
+    <Fragment>
+      {data && (
+        <section>
+          <div className="img-row">
+            {data.slice(0, 10)?.map((item: any, index: any) => {
+              return (
+                <Fragment key={index}>
+                  <img src={item?.urls?.small} alt="" />
+                </Fragment>
+              );
+            })}
+          </div>
+          <div className="img-row">
+            {data.slice(10, 20)?.map((item: any, index: any) => {
+              return (
+                <Fragment key={index}>
+                  <img src={item?.urls?.small} alt="" />
+                </Fragment>
+              );
+            })}
+          </div>
+          <div className="img-row">
+            {data.slice(20, 30)?.map((item: any, index: any) => {
+              return (
+                <Fragment key={index}>
+                  <img src={item?.urls?.small} alt="" />
+                </Fragment>
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </Fragment>
   );
 };
 export default ImageGallery;

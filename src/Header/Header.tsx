@@ -18,6 +18,11 @@ const Header: React.FC = () => {
     setLastSearchString(searchString);
     if (searchString) {
       dispatch(getSearchImages(searchString));
+      window.scroll({
+        top: 600,
+        left: 0,
+        behavior: "smooth",
+      });
     } else {
       dispatch(getImages(30));
     }

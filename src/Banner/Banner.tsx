@@ -1,12 +1,14 @@
 import "./Banner.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getImages, getSearchImages } from "../store/images/lorem/loremSlice";
 import { useState } from "react";
+import { getImageData } from "../store/images/lorem/selector";
 
 const Banner: React.FC = () => {
   const [searchString, setSearchString] = useState("");
   const [lastSearchString, setLastSearchString] = useState("");
   const dispatch = useDispatch<any>();
+  const data: any = useSelector(getImageData);
 
   const handelChange = (e: any) => {
     setSearchString(e.target.value);
@@ -18,6 +20,11 @@ const Banner: React.FC = () => {
     setLastSearchString(searchString);
     if (searchString) {
       dispatch(getSearchImages(searchString));
+      window.scroll({
+        top: 600,
+        left: 0,
+        behavior: "smooth",
+      });
     } else {
       dispatch(getImages(30));
     }
@@ -28,7 +35,7 @@ const Banner: React.FC = () => {
       <div className="banner-content">
         <h1>Unsplash</h1>
         <p>
-          The internet’s source for visuals. brPowered by creators everywhere.
+          The internet’s source for visuals. Powered by creators everywhere.
         </p>
         <div className="search-bar">
           <form onSubmit={handelSubmit} style={{ borderRadius: 0, height: 54 }}>
@@ -51,6 +58,7 @@ const Banner: React.FC = () => {
               placeholder="Search photos"
             />
           </form>
+          {data.length == 0 && <h1>😔 Sorry No Result Found !</h1>}
         </div>
       </div>
     </div>
