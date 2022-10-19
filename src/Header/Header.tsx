@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./Header.css";
+import { useDispatch } from "react-redux";
+import { getImages, getSearchImages } from "../store/images/lorem/loremSlice";
 
 const Header: React.FC = () => {
   const [searchString, setSearchString] = useState("");
+  const [lastSearchString, setLastSearchString] = useState("");
+  const dispatch = useDispatch<any>();
 
   const handelChange = (e: any) => {
     setSearchString(e.target.value);
@@ -10,14 +14,13 @@ const Header: React.FC = () => {
 
   const handelSubmit = (e: any) => {
     e.preventDefault();
-    console.log("searchString", searchString);
-    fetch(
-      `https://api.unsplash.com/search/photos/?client_id=1i-ZXoeqYrgc3a_qRtxdgjafMORafhpvgCKrTogrdys&query=${searchString}&per_page=30`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        console.log("result", result);
-      });
+    if (lastSearchString == searchString) return;
+    setLastSearchString(searchString);
+    if (searchString) {
+      dispatch(getSearchImages(searchString));
+    } else {
+      dispatch(getImages(30));
+    }
   };
 
   return (

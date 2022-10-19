@@ -35,7 +35,7 @@
 @media (max-width:575px){
 
 }
-@media screen and (orientation:landscape) { 
+@media (max-width:768px) and (orientation:landscape) { 
     .banner-content{
         margin-top: 50px;
     }

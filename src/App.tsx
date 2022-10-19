@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect, useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
 import Header from "./Header/Header";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import Banner from "./Banner/Banner";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Header />
       <Banner />
       <ImageGallery />
-    </div>
+    </Provider>
   );
 };
 
