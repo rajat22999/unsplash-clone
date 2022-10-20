@@ -1,0 +1,23 @@
+.category-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.category-bar{
+    display: flex;
+    padding: 4px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.category-bar>p,.category-container>p{
+    margin: 0;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+.category-bar>p:hover{
+    font-weight: 500;
+}

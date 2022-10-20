@@ -5,6 +5,7 @@ import ImageGallery from "./ImageGallery/ImageGallery";
 import Banner from "./Banner/Banner";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import CategoryBar from "./CategoryBar/CategoryBar";
 
 const App: React.FC = () => {
   return (

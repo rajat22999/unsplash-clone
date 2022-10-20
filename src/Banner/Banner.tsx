@@ -1,14 +1,17 @@
 import "./Banner.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages, getSearchImages } from "../store/images/lorem/loremSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getImageData } from "../store/images/lorem/selector";
+import { getRandomImage } from "../store/images/random/randomSlice";
+import { getRandomImageData } from "../store/images/random/selector";
 
 const Banner: React.FC = () => {
   const [searchString, setSearchString] = useState("");
   const [lastSearchString, setLastSearchString] = useState("");
   const dispatch = useDispatch<any>();
   const data: any = useSelector(getImageData);
+  const randomData: any = useSelector(getRandomImageData);
 
   const handelChange = (e: any) => {
     setSearchString(e.target.value);
@@ -20,18 +23,20 @@ const Banner: React.FC = () => {
     setLastSearchString(searchString);
     if (searchString) {
       dispatch(getSearchImages(searchString));
-      window.scroll({
-        top: 600,
-        left: 0,
-        behavior: "smooth",
-      });
     } else {
       dispatch(getImages(30));
     }
   };
 
+  useEffect(() => {
+    dispatch(getRandomImage());
+  }, []);
+
   return (
-    <div className="banner-container">
+    <div
+      className="banner-container"
+      style={{ backgroundImage: `url(${randomData?.data?.urls?.full})` }}
+    >
       <div className="banner-content">
         <h1>Unsplash</h1>
         <p>

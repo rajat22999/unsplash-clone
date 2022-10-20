@@ -13,6 +13,11 @@ export const getSearchImages = createAsyncThunk(
   'search/getData',
   async (arg:any) => {
     const response = await searchImages(arg)
+    window.scroll({
+      top: 600,
+      left: 0,
+      behavior: "smooth",
+    });
     return response
   }
 )
