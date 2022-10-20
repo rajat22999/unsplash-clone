@@ -1,7 +1,10 @@
 import { Fragment, useState } from "react";
 import "./Header.css";
 import { useDispatch } from "react-redux";
-import { getImages, getSearchImages } from "../store/images/lorem/loremSlice";
+import {
+  getImages,
+  getSearchImages,
+} from "../store/images/fetchImages/fetchImage";
 import CategoryBar from "../CategoryBar/CategoryBar";
 
 const Header: React.FC = () => {

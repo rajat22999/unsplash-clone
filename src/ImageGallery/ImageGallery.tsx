@@ -2,8 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import "./ImageGallery.css";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { getImageData } from "../store/images/lorem/selector";
-import { getImages } from "../store/images/lorem/loremSlice";
+import { getImageData } from "../store/selector";
+import { getImages } from "../store/images/fetchImages/fetchImage";
 
 const ImageGallery: React.FC = () => {
   const dispatch = useDispatch<any>();

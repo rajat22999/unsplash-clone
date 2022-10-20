@@ -1,10 +1,12 @@
 import "./Banner.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getImages, getSearchImages } from "../store/images/lorem/loremSlice";
+import {
+  getImages,
+  getSearchImages,
+} from "../store/images/fetchImages/fetchImage";
 import { useEffect, useState } from "react";
-import { getImageData } from "../store/images/lorem/selector";
+import { getImageData, getRandomImageData } from "../store/selector";
 import { getRandomImage } from "../store/images/random/randomSlice";
-import { getRandomImageData } from "../store/images/random/selector";
 
 const Banner: React.FC = () => {
   const [searchString, setSearchString] = useState("");

@@ -1,7 +1,7 @@
 import { imageCategories } from "../utils/constants";
 import "./CategoryBar.css";
 import { useDispatch } from "react-redux";
-import { getSearchImages } from "../store/images/lorem/loremSlice";
+import { getSearchImages } from "../store/images/fetchImages/fetchImage";
 
 const CategoryBar: React.FC = () => {
   const dispatch = useDispatch<any>();

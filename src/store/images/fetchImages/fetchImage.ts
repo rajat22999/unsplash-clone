@@ -2,7 +2,7 @@ import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchImages, searchImages } from '../../../services/imageApi'
 
 export const getImages = createAsyncThunk(
-  'lorem/getData',
+  'fetchImage/getData',
   async (arg:any) => {
     const response = await fetchImages(arg)
     return response
@@ -22,8 +22,8 @@ export const getSearchImages = createAsyncThunk(
   }
 )
 
-const loremSlice = createSlice({
-  name: 'lorem',
+const fetchImage = createSlice({
+  name: 'fetchImage',
   initialState:{
     data:[],
     isSuccess:false,
@@ -60,4 +60,4 @@ const loremSlice = createSlice({
   },
 })
 
-export default loremSlice.reducer
+export default fetchImage.reducer
