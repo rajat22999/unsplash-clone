@@ -20,8 +20,6 @@ const Banner: React.FC = () => {
   };
 
   const handelSubmit = (e: any) => {
-    console.log("ssssssssss");
-
     e.preventDefault();
     if (lastSearchString == searchString) return;
     setLastSearchString(searchString);

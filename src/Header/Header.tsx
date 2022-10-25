@@ -18,8 +18,6 @@ const Header: React.FC = () => {
   };
 
   const handelSubmit = (e: any) => {
-    console.log("aaaaaaaaaaaaa");
-
     e.preventDefault();
     if (lastSearchString == searchString) return;
     setLastSearchString(searchString);
