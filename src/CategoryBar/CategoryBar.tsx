@@ -7,6 +7,8 @@ const CategoryBar: React.FC = () => {
   const dispatch = useDispatch<any>();
 
   const fetchImageByCategory = (category: string) => {
+    console.log("rrrrrrrrrr");
+
     dispatch(getSearchImages(category));
   };
 

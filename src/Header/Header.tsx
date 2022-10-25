@@ -18,6 +18,8 @@ const Header: React.FC = () => {
   };
 
   const handelSubmit = (e: any) => {
+    console.log("aaaaaaaaaaaaa");
+
     e.preventDefault();
     if (lastSearchString == searchString) return;
     setLastSearchString(searchString);
@@ -46,7 +48,7 @@ const Header: React.FC = () => {
           </svg>
         </div>
         <div className="search-bar">
-          <form onSubmit={handelSubmit}>
+          <form onSubmit={() => handelSubmit}>
             <button type="submit">
               <svg
                 width="32"

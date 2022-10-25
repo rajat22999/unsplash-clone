@@ -20,6 +20,8 @@ const Banner: React.FC = () => {
   };
 
   const handelSubmit = (e: any) => {
+    console.log("ssssssssss");
+
     e.preventDefault();
     if (lastSearchString == searchString) return;
     setLastSearchString(searchString);
@@ -45,7 +47,10 @@ const Banner: React.FC = () => {
           The internet’s source for visuals. Powered by creators everywhere.
         </p>
         <div className="search-bar">
-          <form onSubmit={handelSubmit} style={{ borderRadius: 0, height: 54 }}>
+          <form
+            onSubmit={() => handelSubmit}
+            style={{ borderRadius: 0, height: 54 }}
+          >
             <button type="submit">
               <svg
                 width="32"
