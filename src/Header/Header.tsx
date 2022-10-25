@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           </svg>
         </div>
         <div className="search-bar">
-          <form onSubmit={() => handelSubmit}>
+          <form onSubmit={handelSubmit}>
             <button type="submit">
               <svg
                 width="32"
